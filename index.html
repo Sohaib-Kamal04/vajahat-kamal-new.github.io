@@ -4,6 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SEO Tools Suite</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Free SEO tools including keyword difficulty checker, backlink analyzer, meta tag generator, and plagiarism checker.">
+  <meta name="keywords" content="SEO tools, keyword difficulty, backlink analyzer, meta tag preview, plagiarism checker">
+  <meta name="author" content="SEO Tools Suite">
+
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="SEO Tools Suite">
+  <meta property="og:description" content="Free SEO tools including keyword checker, backlinks, SERP preview, and plagiarism checker.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vajahat-kamal-new.github.io/seo-tools/">
+
+  <!-- Favicon (optional) -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -22,14 +37,14 @@
   <main>
     <!-- Keyword Difficulty Checker -->
     <section id="keyword-checker">
-  <h2>Keyword Difficulty Checker</h2>
-  <div style="position:relative;">
-    <input type="text" id="keywordInput" placeholder="Enter a keyword..." autocomplete="off" />
-  </div>
-  <button onclick="checkKeywordDifficulty()">Check Difficulty</button>
-  <p id="keywordResult"></p>
-  <button onclick="downloadKeywordReport()">Download PDF</button>
-</section>
+      <h2>Keyword Difficulty Checker</h2>
+      <div style="position:relative;">
+        <input type="text" id="keywordInput" placeholder="Enter a keyword..." autocomplete="off" />
+      </div>
+      <button onclick="checkKeywordDifficulty()">Check Difficulty</button>
+      <p id="keywordResult"></p>
+      <button onclick="downloadKeywordReport()">Download PDF</button>
+    </section>
 
     <!-- Backlink Analyzer -->
     <section id="backlink-analyzer">
@@ -41,23 +56,21 @@
 
     <!-- Meta Tag & SERP Preview -->
     <section id="meta-tag-generator">
-  <h2>Meta Tag & SERP Preview Generator</h2>
+      <h2>Meta Tag & SERP Preview Generator</h2>
+      <label for="metaTitle">Meta Title</label><br>
+      <input type="text" id="metaTitle" placeholder="Enter your meta title..." maxlength="70"><br>
+      <small id="titleCounter">0 characters • 0 pixels</small><br><br>
 
-  <label for="metaTitle">Meta Title</label><br>
-  <input type="text" id="metaTitle" placeholder="Enter your meta title..." maxlength="70"><br>
-  <small id="titleCounter">0 characters • 0 pixels</small><br><br>
+      <label for="metaDescription">Meta Description</label><br>
+      <textarea id="metaDescription" placeholder="Enter your meta description..." maxlength="160"></textarea><br>
+      <small id="descCounter">0 characters • 0 pixels</small><br><br>
 
-  <label for="metaDescription">Meta Description</label><br>
-  <textarea id="metaDescription" placeholder="Enter your meta description..." maxlength="160"></textarea><br>
-  <small id="descCounter">0 characters • 0 pixels</small><br><br>
-
-  <div class="serp-preview">
-    <p class="serp-title" id="serpTitle">Example Title</p>
-    <p class="serp-url">www.yoursite.com/sample-url</p>
-    <p class="serp-description" id="serpDescription">Example meta description</p>
-  </div>
-</section>
-
+      <div class="serp-preview">
+        <p class="serp-title" id="serpTitle">Example Title</p>
+        <p class="serp-url">www.yoursite.com/sample-url</p>
+        <p class="serp-description" id="serpDescription">Example meta description</p>
+      </div>
+    </section>
 
     <!-- Plagiarism Checker -->
     <section id="plagiarism-checker">
@@ -73,8 +86,6 @@
   </footer>
 
   <script src="script.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </body>
 </html>
-
-
