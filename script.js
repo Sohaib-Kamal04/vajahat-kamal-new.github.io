@@ -146,5 +146,17 @@ function submitFeedback() {
   document.getElementById('feedback-popup').style.display = 'none';
 }
 
+function toggleDarkMode() {
+  const isDark = document.body.classList.toggle("dark-mode");
+  localStorage.setItem("darkMode", isDark);
+}
+
+// Load from localStorage on page load
+window.addEventListener("load", () => {
+  if (localStorage.getItem("darkMode") === "true") {
+    document.body.classList.add("dark-mode");
+    document.getElementById("darkModeToggle").checked = true;
+  }
+});
 
 
