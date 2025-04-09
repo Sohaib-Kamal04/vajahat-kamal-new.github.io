@@ -60,12 +60,25 @@ button:hover {
   background-color: #005fa3;
 }
 
+
 footer {
   text-align: center;
   padding: 20px;
-  background: #333;
-  color: white;
+  background-color: #f8f9fa;
+  font-size: 0.9rem;
+  border-top: 1px solid #ccc;
 }
+
+footer nav a {
+  color: #007BFF;
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+footer nav a:hover {
+  text-decoration: underline;
+}
+
 
 .suggestion-box {
   border: 1px solid #ccc;
