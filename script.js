@@ -134,4 +134,17 @@ metaDescriptionInput.addEventListener("input", () => {
   descCounter.innerText = `${charCount} characters • ${pixelWidth} pixels`;
 });
 
+function openFeedback() {
+  const popup = document.getElementById('feedback-popup');
+  popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+}
+
+function submitFeedback() {
+  const feedback = document.querySelector('#feedback-popup textarea').value;
+  alert('Thanks for your feedback!');
+  document.querySelector('#feedback-popup textarea').value = '';
+  document.getElementById('feedback-popup').style.display = 'none';
+}
+
+
 
