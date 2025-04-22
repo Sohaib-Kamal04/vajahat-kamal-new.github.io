@@ -3,105 +3,76 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SEO Tools Suite</title>
-  
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-51FSKKZQRV"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-51FSKKZQRV');
-  </script>
+  <title>All-in-One Online Tools – PDF, SEO, Generator & More</title>
+  <meta name="description" content="Access powerful free tools including PDF converters, SEO analyzers, password generators, and more – all in one place.">
+  <meta name="keywords" content="online tools, free PDF tools, SEO tools, password generator, merge PDF, keyword checker">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4191155848667761" crossorigin="anonymous"></script>
 
-  <!-- Meta Tags -->
-  <meta name="description" content="Free SEO tools including keyword difficulty checker, backlink analyzer, meta tag generator, plagiarism checker, and password generator.">
-  <meta name="keywords" content="SEO tools, keyword difficulty, backlink analyzer, meta tag preview, plagiarism checker, password generator">
-  <meta name="author" content="SEO Tools Suite">
-  <meta name="google-site-verification" content="YhymswORgp9a7HNSM3ykFjANDfqz1qPLmmZEed62p7o" />
-
-  <!-- Open Graph Tags -->
-  <meta property="og:title" content="SEO Tools Suite">
-  <meta property="og:description" content="Free SEO tools including keyword checker, backlinks, SERP preview, plagiarism, and password generator.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://vajahat-kamal-new.github.io/">
-
-  <link rel="stylesheet" href="style.css" />
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QHZTGMTZH7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QHZTGMTZH7');
+  </script>
 </head>
 <body>
   <header>
-    <h1>SEO Tools Suite</h1>
-    <nav>
-      <ul>
-        <li><a href="#keyword-checker">Keyword Difficulty</a></li>
-        <li><a href="#backlink-analyzer">Backlink Analyzer</a></li>
-        <li><a href="#meta-tag-generator">Meta & SERP Preview</a></li>
-        <li><a href="#plagiarism-checker">Plagiarism Checker</a></li>
-        <li><a href="password-generator.html">Password Generator</a></li>
-      </ul>
-    </nav>
+    <h1>All-in-One Tools Suite</h1>
+    <p>Your free online toolbox for PDF, SEO, and productivity.</p>
   </header>
 
-  <main>
-    <!-- Keyword Difficulty Checker -->
-    <section id="keyword-checker">
-      <h2>Keyword Difficulty Checker</h2>
-      <input type="text" id="keywordInput" placeholder="Enter a keyword..." autocomplete="off" />
-      <button onclick="checkKeywordDifficulty()">Check Difficulty</button>
-      <p id="keywordResult"></p>
-      <button onclick="downloadKeywordReport()">Download PDF</button>
-    </section>
-
-    <!-- Backlink Analyzer -->
-    <section id="backlink-analyzer">
-      <h2>Backlink Analyzer</h2>
-      <input type="text" id="backlinkInput" placeholder="Enter a website URL..." />
-      <button onclick="analyzeBacklinks()">Analyze</button>
-      <p id="backlinkResult"></p>
-    </section>
-
-    <!-- Meta Tag & SERP Preview -->
-    <section id="meta-tag-generator">
-      <h2>Meta Tag & SERP Preview Generator</h2>
-      <label for="metaTitle">Meta Title</label><br>
-      <input type="text" id="metaTitle" placeholder="Enter your meta title..." maxlength="70"><br>
-      <small id="titleCounter">0 characters • 0 pixels</small><br><br>
-
-      <label for="metaDescription">Meta Description</label><br>
-      <textarea id="metaDescription" placeholder="Enter your meta description..." maxlength="160"></textarea><br>
-      <small id="descCounter">0 characters • 0 pixels</small><br><br>
-
-      <div class="serp-preview">
-        <p class="serp-title" id="serpTitle">Example Title</p>
-        <p class="serp-url">www.yoursite.com/sample-url</p>
-        <p class="serp-description" id="serpDescription">Example meta description</p>
+  <main class="tool-container">
+    <section>
+      <h2>📄 PDF Tools</h2>
+      <div class="grid">
+        <a href="merge-pdfs.html" class="tool-card">Merge PDFs</a>
+        <a href="split-pdf.html" class="tool-card">Split PDF</a>
+        <a href="compress-pdf.html" class="tool-card">Compress PDF</a>
+        <a href="add-text-signature.html" class="tool-card">Add Text/Signature</a>
+        <a href="rotate-pdf.html" class="tool-card">Rotate PDF</a>
+        <a href="extract-text.html" class="tool-card">Extract Text</a>
+        <a href="reorder-pages.html" class="tool-card">Reorder Pages</a>
+        <a href="image-to-pdf.html" class="tool-card">Image to PDF</a>
+        <a href="pdf-to-image.html" class="tool-card">PDF to Image</a>
       </div>
     </section>
 
-    <!-- Plagiarism Checker -->
-    <section id="plagiarism-checker">
-      <h2>Plagiarism Checker (Basic)</h2>
-      <textarea id="plagiarismInput" placeholder="Paste your content here..." rows="6"></textarea>
-      <button onclick="checkPlagiarism()">Check</button>
-      <p id="plagiarismResult"></p>
+    <section>
+      <h2>📊 SEO Tools</h2>
+      <div class="grid">
+        <a href="keyword-difficulty-checker.html" class="tool-card">Keyword Difficulty Checker</a>
+        <a href="backlink-analyzer.html" class="tool-card">Backlink Analyzer</a>
+        <a href="meta-tag-generator.html" class="tool-card">Meta Tag Generator</a>
+        <a href="serp-preview.html" class="tool-card">SERP Preview</a>
+        <a href="plagiarism-checker.html" class="tool-card">Plagiarism Checker</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>🔐 Productivity Tools</h2>
+      <div class="grid">
+        <a href="password-generator.html" class="tool-card">Password Generator</a>
+        <!-- Add more tools here -->
+      </div>
     </section>
   </main>
 
   <footer>
-  <p>&copy; 2025 SEO Tools Suite. All rights reserved.</p>
-  <nav>
-    <a href="about.html">About Us</a> |
-    <a href="contact.html">Contact</a> |
-    <a href="privacy.html">Privacy Policy</a> |
-    <a href="terms.html">Terms of Use</a>
-  </nav>
-</footer>
-
-  <script src="script.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <div class="footer-container">
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms-of-service.html">Terms of Service</a></li>
+      </ul>
+      <p>&copy; 2025 All-in-One Tools Suite. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
-
