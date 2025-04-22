@@ -1,71 +1,88 @@
+/* Base Styles */
 :root {
-  --bg-dark: #2b2d42;
-  --primary: #ef233c;
-  --light: #edf2f4;
-  --text: #ffffff;
-  --accent: #8d99ae;
+  --primary-color: #4a90e2;
+  --secondary-color: #f5a623;
+  --bg-color: #f4f4f9;
+  --text-color: #333;
+  --accent-color: #ecf0f1;
+  --hover-color: #3498db;
 }
 
 body {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--bg-dark);
-  color: var(--text);
+  padding: 0;
 }
 
 header {
-  background-color: var(--primary);
-  color: var(--text);
-  padding: 20px;
+  background-color: var(--primary-color);
+  padding: 15px;
+  text-align: center;
+  color: #fff;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+header .logo {
+  height: 40px;
+  margin-right: 15px;
+  vertical-align: middle;
+}
+
+main {
+  padding: 40px 20px;
   text-align: center;
 }
 
-.logo {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 5px;
+h2 {
+  color: var(--primary-color);
 }
 
-.subtitle {
-  font-size: 1rem;
-  color: var(--light);
+.section-title {
+  margin-top: 30px;
+  font-size: 24px;
+  color: var(--secondary-color);
 }
 
-.tool-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+.tool-box {
+  display: flex;
+  justify-content: center;
   gap: 20px;
-  padding: 40px;
+  margin-top: 20px;
 }
 
-.tool-card {
-  background-color: var(--accent);
-  border-radius: 10px;
-  padding: 20px;
-  text-align: center;
-  color: var(--bg-dark);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s ease;
+button {
+  background-color: var(--secondary-color);
+  border: none;
+  padding: 15px 30px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
-.tool-card:hover {
-  transform: translateY(-5px);
-  background-color: var(--primary);
-  color: var(--text);
-}
-
-.tool-card a {
-  text-decoration: none;
-  color: inherit;
-  font-weight: bold;
-  display: block;
-  margin-top: 10px;
+button:hover {
+  background-color: var(--hover-color);
 }
 
 footer {
-  background-color: var(--primary);
-  color: var(--text);
+  background-color: #333;
+  color: white;
+  padding: 15px;
   text-align: center;
-  padding: 20px;
-  margin-top: 40px;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+footer a:hover {
+  color: var(--secondary-color);
 }
