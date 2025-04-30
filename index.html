@@ -2,68 +2,88 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Unified Tools Suite - SEO, PDF, and More</title>
-  <meta name="description" content="Access a suite of tools including SEO tools, PDF tools, and password generators. All in one place to simplify your digital tasks!">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Power Tools Suite</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="tools-suite-logo.png" type="image/png" />
-  
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4191155848667761"
-     crossorigin="anonymous"></script>
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QHZTGMTZH7"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-QHZTGMTZH7');
-  </script>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2d0f2f63a.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
   <header>
-    <img src="tools-suite-logo.png" class="logo" alt="Unified Tools Suite Logo">
-    <h1>Welcome to Unified Tools Suite</h1>
+    <div class="container nav-container">
+      <h1>⚡ Power Tools Suite</h1>
+      <nav id="navbar">
+        <ul class="nav-links">
+          <li><a href="#pdf-tools">PDF Tools</a></li>
+          <li><a href="#seo-tools">SEO Tools</a></li>
+          <li><a href="#utility-tools">Utilities</a></li>
+        </ul>
+        <button class="mobile-toggle" onclick="toggleMenu()">☰</button>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <h2>All-in-One Tool Collection</h2>
-    <p>Explore and use tools to boost your productivity: SEO tools, PDF tools, password generators, and more!</p>
+  <section class="hero">
+    <div class="container">
+      <h2>Your All-in-One Online Tools Hub</h2>
+      <p>Free, fast, and fully functional tools to boost productivity.</p>
+    </div>
+  </section>
 
-    <section id="seo-tools">
-      <h3 class="section-title">SEO Tools</h3>
-      <div class="tool-box">
-        <button>SEO Keyword Difficulty Checker</button>
-        <button>Backlink Analyzer</button>
-        <button>Meta Tag Generator</button>
+  <section id="pdf-tools" class="tool-section pdf">
+    <div class="container">
+      <h2><i class="fas fa-file-pdf"></i> PDF Tools</h2>
+      <div class="tool-grid">
+        <a href="#" class="tool-card">Merge PDFs</a>
+        <a href="#" class="tool-card">Split PDFs</a>
+        <a href="#" class="tool-card">Compress PDFs</a>
+        <a href="#" class="tool-card">Add Text/Signature</a>
+        <a href="#" class="tool-card">Rotate PDF</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="pdf-tools">
-      <h3 class="section-title">PDF Tools</h3>
-      <div class="tool-box">
-        <button>Merge PDFs</button>
-        <button>Split PDF</button>
-        <button>Compress PDF</button>
-        <button>Extract Text from PDF</button>
+  <section id="seo-tools" class="tool-section seo">
+    <div class="container">
+      <h2><i class="fas fa-search"></i> SEO Tools</h2>
+      <div class="tool-grid">
+        <a href="#" class="tool-card">Keyword Difficulty</a>
+        <a href="#" class="tool-card">Backlink Analyzer</a>
+        <a href="#" class="tool-card">Meta Tag Generator</a>
+        <a href="#" class="tool-card">Plagiarism Checker</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="other-tools">
-      <h3 class="section-title">Other Tools</h3>
-      <div class="tool-box">
-        <button>Password Generator</button>
+  <section id="utility-tools" class="tool-section utility">
+    <div class="container">
+      <h2><i class="fas fa-tools"></i> Utility Tools</h2>
+      <div class="tool-grid">
+        <div class="tool-card">
+          <h3>Password Generator</h3>
+          <input type="number" id="length" min="4" max="32" value="12" />
+          <button onclick="generatePassword()">Generate</button>
+          <input type="text" id="password-output" readonly />
+        </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+
+  <section class="ads">
+    <!-- Future AdSense placement -->
+    <div class="container">
+      <p>Ad placeholder</p>
+    </div>
+  </section>
 
   <footer>
-    <div>
-      <a href="about.html">About Us</a>
-      <a href="contact.html">Contact Us</a>
-      <a href="privacy-policy.html">Privacy Policy</a>
-      <a href="terms-of-service.html">Terms of Service</a>
+    <div class="container">
+      <p>&copy; 2025 Power Tools Suite. All rights reserved.</p>
     </div>
-    <p>&copy; 2025 Unified Tools Suite. All rights reserved.</p>
   </footer>
+
+  <script src="main.js"></script>
 </body>
 </html>
