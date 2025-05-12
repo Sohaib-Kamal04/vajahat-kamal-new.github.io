@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Split PDF</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Split PDF</h1>
+  <input type="file" id="fileInput" accept="application/pdf" />
+  <button id="splitButton">Split</button>
+  <div id="status"></div>
+
+  <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+  <script>
+    document.getElementById('splitButton').addEventListener('click', async () => {
+      const input = document.getElementById('fileInput');
+      const status = document.getElementById('status');
+      if (input.files.length !== 1) {
+        alert('Please upload one PDF file to split.');
+        return;
+      }
+
+      const file = input.files[0];
+      const arrayBuffer = await file.arrayBuffer();
+      const pdfDoc = await PDFLib.PDFDocument.load(arrayBuffer);
+
+      const totalPages = pdfDoc.getPageCount();
+
+      status.innerHTML = `Splitting into ${totalPages} pages...`;
+
+      for (let i = 0; i < totalPages; i++) {
+        const newPdf = await PDFLib.PDFDocument.create();
+        const [copiedPage] = await newPdf.copyPages(pdfDoc, [i]);
+        newPdf.addPage(copiedPage);
+        const newPdfBytes = await newPdf.save();
+        const blob = new Blob([newPdfBytes], { type: 'application/pdf' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = `page-${i + 1}.pdf`;
+        link.textContent = `Download page ${i + 1}`;
+        link.style.display = 'block';
+        status.appendChild(link);
+      }
+    });
+  </script>
+</body>
+</html>
