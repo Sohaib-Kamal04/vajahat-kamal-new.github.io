@@ -3,132 +3,102 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Power Tools Suite</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a2d0f2f63a.js" crossorigin="anonymous"></script>
- <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-P4KH9H36');</script>
-<!-- End Google Tag Manager -->
-
+  <meta name="description" content="All-in-one online tools suite for PDF, SEO, text, dev, and image tasks. Fast, free, no sign-up." />
+  <title>All-in-One Tools Suite</title>
+  <link rel="stylesheet" href="/assets/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background-color: #1e40af;
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+    .search-bar {
+      text-align: center;
+      margin: 2rem 0;
+    }
+    .search-bar input {
+      padding: 0.75rem;
+      width: 80%;
+      max-width: 500px;
+      font-size: 1rem;
+    }
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+    .tool-card {
+      background: white;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+    .tool-card:hover {
+      transform: translateY(-5px);
+    }
+    .tool-card a {
+      color: #1e40af;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P4KH9H36"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
   <header>
-    <div class="container nav-container">
-      <h1>⚡ Power Tools Suite</h1>
-      <nav id="navbar">
-        <ul class="nav-links">
-          <li><a href="#pdf-tools">PDF Tools</a></li>
-          <li><a href="#seo-tools">SEO Tools</a></li>
-          <li><a href="#utility-tools">Utilities</a></li>
-          <li>hello</li>
-        </ul>
-        <button class="mobile-toggle" onclick="toggleMenu()">☰</button>
-      </nav>
-    </div>
+    <h1>All-in-One Tools Suite</h1>
+    <p>Fast. Free. No Sign-up.</p>
   </header>
 
-  <section class="hero">
-    <div class="container">
-      <h2>Your All-in-One Online Tools Hub</h2>
-      <p>Free, fast, and fully functional tools to boost productivity.</p>
-    </div>
-  </section>
-  <section class="about">
-  <div class="container">
-    <h2>Why Power Tools Suite?</h2>
-    <p>
-      In today’s digital world, everyone from students and freelancers to small business owners and marketers needs access to quick, reliable tools. But most online tools are either paid, cluttered with ads, or don’t work properly.
-    </p>
-    <p>
-      <strong>Power Tools Suite</strong> was built to solve this. It's a collection of genuinely useful tools — like PDF editors, SEO checkers, and secure utilities — all in one place, free for everyone. Our goal is to help you get your work done faster, smarter, and without distractions.
-    </p>
-    <p>
-      This site is 100% free to use, mobile-friendly, and regularly updated with new features. No fluff. Just functional tools to help make your digital tasks easier and more efficient.
-    </p>
+  <div class="search-bar">
+    <input type="text" placeholder="Search tools (e.g. merge pdf, keyword checker)..." onkeyup="filterTools(this.value)">
   </div>
-</section>
 
-
-  <section id="pdf-tools" class="tool-section pdf">
-    <div class="container">
-      <h2><i class="fas fa-file-pdf"></i> PDF Tools</h2>
-      <p>
-  These tools help you manage your documents quickly — merge, compress, sign, or rotate PDFs — all in your browser with no installations needed.
-</p>
-
-      <div class="tool-grid">
-        <a href="merge-pdfs.html">Merge PDFs</a>
-        <a href="#" class="tool-card">Split PDFs</a>
-        <a href="#" class="tool-card">Compress PDFs</a>
-        <a href="#" class="tool-card">Add Text/Signature</a>
-        <a href="#" class="tool-card">Rotate PDF</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="seo-tools" class="tool-section seo">
-    <div class="container">
-      <h2><i class="fas fa-search"></i> SEO Tools</h2>
-      <p>
-  Whether you're a blogger, small business, or content strategist, these tools can help you analyze keywords, backlinks, and content — to boost visibility and grow organically.
-</p>
-
-      <div class="tool-grid">
-        <a href="#" class="tool-card">Keyword Difficulty</a>
-        <a href="#" class="tool-card">Backlink Analyzer</a>
-        <a href="#" class="tool-card">Meta Tag Generator</a>
-        <a href="#" class="tool-card">Plagiarism Checker</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="utility-tools" class="tool-section utility">
-    <div class="container">
-      <h2><i class="fas fa-tools"></i> Utility Tools</h2>
-      <p>
-  Need a secure, random password? Our generator helps you create strong passwords to keep your accounts safe. More utilities coming soon.
-</p>
-
-      <div class="tool-grid">
-        <div class="tool-card">
-          <h3>Password Generator</h3>
-          <input type="number" id="length" min="4" max="32" value="12" />
-          <button onclick="generatePassword()">Generate</button>
-          <input type="text" id="password-output" readonly />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="ads">
-    <!-- Future AdSense placement -->
-    <div class="container">
-      <p>Ad placeholder</p>
-    </div>
+  <section class="categories" id="tool-list">
+    <!-- Tools will go here -->
+    <div class="tool-card"><a href="/tools/pdf/merge-pdfs.html">Merge PDFs</a></div>
+    <div class="tool-card"><a href="/tools/pdf/split-pdf.html">Split PDFs</a></div>
+    <div class="tool-card"><a href="/tools/seo/keyword-checker.html">Keyword Difficulty Checker</a></div>
+    <div class="tool-card"><a href="/tools/seo/meta-generator.html">Meta Tag Generator</a></div>
+    <div class="tool-card"><a href="/tools/text/case-converter.html">Case Converter</a></div>
+    <div class="tool-card"><a href="/tools/text/word-counter.html">Word Counter</a></div>
+    <div class="tool-card"><a href="/tools/dev/js-beautifier.html">JavaScript Beautifier</a></div>
+    <div class="tool-card"><a href="/tools/dev/css-minifier.html">CSS Minifier</a></div>
+    <div class="tool-card"><a href="/tools/image/compress-image.html">Image Compressor</a></div>
+    <div class="tool-card"><a href="/tools/image/resize-image.html">Resize Image</a></div>
   </section>
 
   <footer>
-    <div class="container">
-      <p>&copy; 2025 Power Tools Suite. All rights reserved.</p>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="privacy.html">Privacy Policy</a></li>
-      <li><a href="terms.html">Terms</a></li>
-
-    </div>
+    &copy; 2025 All-in-One Tools Suite. Built with HTML, CSS & JS.
   </footer>
 
-  <script src="main.js"></script>
+  <script>
+    function filterTools(query) {
+      query = query.toLowerCase();
+      const cards = document.querySelectorAll('.tool-card');
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.includes(query) ? 'block' : 'none';
+      });
+    }
+  </script>
 </body>
 </html>
