@@ -2,47 +2,101 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Merge PDFs</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Merge multiple PDF files quickly and for free." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root { --font-inter: 'Inter', system-ui, sans-serif; }
+  </style>
 </head>
-<body>
-  <h1>Merge PDFs</h1>
-  <input type="file" id="fileInput" multiple accept="application/pdf" />
-  <button id="mergeBtn">Merge PDFs</button>
-  <div id="downloadArea"></div>
+<body class="min-h-screen bg-gray-50 text-gray-800 font-sans" style="font-family: var(--font-inter);">
+  <header class="bg-[#1e40af] text-white py-6 px-4 text-center">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-4xl font-bold mb-2">All-in-One Tools Suite</h1>
+      <p class="text-lg">Fast. Free. No Sign-up.</p>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 py-12">
+    <div class="bg-white rounded-2xl shadow-md p-8 space-y-6">
+      <h2 class="text-2xl font-semibold text-indigo-900">Merge PDFs</h2>
+      <p class="text-sm text-gray-600">Select at least two PDF files and click merge to combine them into one.</p>
+
+      <div class="flex flex-col gap-4">
+        <label class="block">
+          <span class="block text-sm font-medium mb-1">Choose PDFs</span>
+          <input
+            type="file"
+            id="fileInput"
+            multiple
+            accept="application/pdf"
+            class="w-full cursor-pointer rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          />
+        </label>
+
+        <button
+          id="mergeBtn"
+          class="w-full inline-block text-center bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-lg shadow-sm transition"
+        >
+          Merge PDFs
+        </button>
+
+        <div id="downloadArea" class="mt-4"></div>
+      </div>
+
+      <div id="errorMsg" class="text-red-600 text-sm hidden"></div>
+    </div>
+  </main>
+
+  <footer class="text-center py-6 text-sm text-gray-500">
+    &copy; 2025 All-in-One Tools Suite. Built with HTML, CSS &amp; JS.
+  </footer>
 
   <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
   <script>
     document.getElementById('mergeBtn').addEventListener('click', async () => {
       const input = document.getElementById('fileInput');
       const downloadArea = document.getElementById('downloadArea');
+      const errorMsg = document.getElementById('errorMsg');
       downloadArea.innerHTML = '';
+      errorMsg.classList.add('hidden');
+      errorMsg.textContent = '';
 
       const files = input.files;
       if (files.length < 2) {
-        alert('Please select at least two PDF files to merge.');
+        errorMsg.textContent = 'Please select at least two PDF files to merge.';
+        errorMsg.classList.remove('hidden');
         return;
       }
 
-      const mergedPdf = await PDFLib.PDFDocument.create();
+      try {
+        const mergedPdf = await PDFLib.PDFDocument.create();
 
-      for (let file of files) {
-        const arrayBuffer = await file.arrayBuffer();
-        const pdf = await PDFLib.PDFDocument.load(arrayBuffer);
-        const copiedPages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
-        copiedPages.forEach((page) => mergedPdf.addPage(page));
+        for (let file of files) {
+          const arrayBuffer = await file.arrayBuffer();
+          const pdf = await PDFLib.PDFDocument.load(arrayBuffer);
+          const copiedPages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
+          copiedPages.forEach((page) => mergedPdf.addPage(page));
+        }
+
+        const mergedPdfBytes = await mergedPdf.save();
+        const blob = new Blob([mergedPdfBytes], { type: 'application/pdf' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'merged.pdf';
+        link.textContent = 'Download Merged PDF';
+        link.className = 'inline-block mt-2 px-6 py-3 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 transition';
+        downloadArea.appendChild(link);
+      } catch (e) {
+        errorMsg.textContent = 'Something went wrong while merging. Make sure the files are valid PDFs.';
+        errorMsg.classList.remove('hidden');
+        console.error(e);
       }
-
-      const mergedPdfBytes = await mergedPdf.save();
-      const blob = new Blob([mergedPdfBytes], { type: 'application/pdf' });
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = 'merged.pdf';
-      link.textContent = 'Download Merged PDF';
-      link.style.display = 'block';
-      downloadArea.appendChild(link);
     });
   </script>
 </body>
